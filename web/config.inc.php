@@ -124,4 +124,13 @@ $url_base = "http://webdev/mrbs/web";
 $theme = "theharbour";
 
 
+/***********************************************
+ * Authentication settings - read AUTHENTICATION
+ ***********************************************/
+
+$auth["type"] = "db"; // How to validate the user/password. One of "none"
+                          // "config" "db" "db_ext" "pop3" "imap" "ldap" "nis"
+                          // "nw" "ext".
+
+
 ?>
