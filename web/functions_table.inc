@@ -442,13 +442,14 @@ function cell_html($cell, $query_strings)
       $descr      = htmlspecialchars($cell[0]["data"]);
       $long_descr = htmlspecialchars($cell[0]["long_descr"]);
       $slots      = $cell[0]["slots"];
+      $created    = $cell[0]["create_by"];
+      $print_descr = "[" . $descr . "]";
     }
     else  // id not set
     {
       unset($id);
       $slots = 1;
     }
-
     // $c is the colour of the cell that the browser sees. Zebra stripes normally,
     // row_highlight if we're highlighting that line and the appropriate colour if
     // it is booked (determined by the type).
@@ -522,7 +523,7 @@ function cell_html($cell, $query_strings)
                  "\">\n";
         $html .= "<a href=\"view_entry.php?id=$id&amp;". $query_strings['booking'] . "\" title=\"$long_descr\">";
         $html .= ($is_repeat) ? "<img class=\"repeat_symbol $c\" src=\"images/repeat.png\" alt=\"" . get_vocab("series") . "\" title=\"" . get_vocab("series") . "\" width=\"10\" height=\"10\">" : '';
-        $html .= "$descr</a>\n";
+        $html .= "$created $print_descr</a>\n";
         $html .= "</div>\n";
       }
       $html .= "</td>\n";
