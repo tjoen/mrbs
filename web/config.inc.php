@@ -60,4 +60,40 @@ require 'database_config.inc.php';
    or areadefaults.inc.php.  */
 
 
+/*********************************
+ * Site identification information
+ *********************************/
+$mrbs_admin = "The Harbour Administrator";
+$mrbs_admin_email = "The Harbour <harbour@robash.me.uk>";
+// NOTE:  there are more email addresses in $mail_settings below.    You can also give
+// email addresses in the format 'Full Name <address>', for example:
+// $mrbs_admin_email = 'Booking System <admin_email@your.org>';
+// if the name section has any "peculiar" characters in it, you will need
+// to put the name in double quotes, e.g.:
+// $mrbs_admin_email = '"Bloggs, Joe" <admin_email@your.org>';
+
+// The company name is mandatory.   It is used in the header and also for email notifications.
+// The company logo, additional information and URL are all optional.
+
+$mrbs_company = "The Harbour";   // This line must always be uncommented ($mrbs_company is used in various places)
+
+// Uncomment this next line to use a logo instead of text for your organisation in the header
+$mrbs_company_logo = "Themes/theharbour/harbour-logo.png";    // name of your logo file.   This example assumes it is in the MRBS directory
+
+// Uncomment this next line for supplementary information after your company name or logo
+//$mrbs_company_more_info = "You can put additional information here";  // e.g. "XYZ Department"
+
+// Uncomment this next line to have a link to your organisation in the header
+$mrbs_company_url = "http://www.the-harbour.co.uk/";
+
+// This is to fix URL problems when using a proxy in the environment.
+// If links inside MRBS appear broken, then specify here the URL of
+// your MRBS root directory, as seen by the users. For example:
+// $url_base =  "http://webtools.uab.ericsson.se/oam";
+// It is also recommended that you set this if you intend to use email
+// notifications, to ensure that the correct URL is displayed in the
+// notification.
+$url_base = "http://webdev/mrbs/web";
+
+
 ?>
