@@ -96,4 +96,32 @@ $mrbs_company_url = "http://www.the-harbour.co.uk/";
 $url_base = "http://webdev/mrbs/web";
 
 
+/*******************
+ * Themes
+ *******************/
+
+// Choose a theme for the MRBS.   The theme controls two aspects of the look and feel:
+//   (a) the styling:  the most commonly changed colours, dimensions and fonts have been 
+//       extracted from the main CSS file and put into the styling.inc file in the appropriate
+//       directory in the Themes directory.   If you want to change the colour scheme, you should
+//       be able to do it by changing the values in the theme file.    More advanced styling changes
+//       can be made by changing the rules in the CSS file.
+//   (b) the header:  the header.inc file which contains the function used for producing the header.
+//       This enables organisations to plug in their own header functions quite easily, in cases where
+//       the desired corporate look and feel cannot be changed using the CSS alone and the mark-up
+//       itself needs to be changed.
+//
+//  MRBS will look for the files "styling.inc" and "header.inc" in the directory Themes/$theme and
+//  if it can't find them will use the files in Themes/default.    A theme directory can contain
+//  a replacement styling.inc file or a replacement header.inc file or both.
+
+// Available options are:
+
+// "default"        Default MRBS theme
+// "classic126"     Same colour scheme as MRBS 1.2.6
+// "theharbour"     Custom theme created for The Harbour
+
+$theme = "theharbour";
+
+
 ?>

@@ -1,0 +1,28 @@
+#banner td {
+    background-color: #006991;
+    border-color: #E7EBEE;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    color: #FFFFFF;
+    padding: 6px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#logo img {
+}
+
+#contents, 
+#trailer {
+	margin: 0 auto 50px;
+	width: 960px;
+}
+
+body {
+    background-color: #00AEEF;
+    color: #FFFFFF; // #0B263B;
+    font-family: normal verdana,lucida grande,sans-serif;
+    font-size: small;
+    margin: 0;
+    padding: 0;
+}
