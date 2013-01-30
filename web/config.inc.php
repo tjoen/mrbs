@@ -133,4 +133,43 @@ $auth["type"] = "db"; // How to validate the user/password. One of "none"
                           // "nw" "ext".
 
 
+/******************
+ * Display settings
+ ******************/
+
+// [These are all variables that control the appearance of pages and could in time
+//  become per-user settings]
+
+// Start of week: 0 for Sunday, 1 for Monday, etc.
+$weekstarts = 1;
+
+// Days of the week that should be hidden from display
+// 0 for Sunday, 1 for Monday, etc.
+// For example, if you want Saturdays and Sundays to be hidden set $hidden_days = array(0,6);
+//
+// By default the hidden days will be removed completely from the main table in the week and month
+// views.   You can alternatively arrange for them to be shown as narrow, greyed-out columns
+// by editing the CSS file.   Look for $column_hidden_width in mrbs.css.php.
+//
+// [Note that although they are hidden from display in the week and month views, they 
+// can still be booked from the edit_entry form and you can display the bookings by
+// jumping straight into the day view from the date selector.]
+$hidden_days = array(0,6);
+
+// Trailer date format: 0 to show dates as "Jul 10", 1 for "10 Jul"
+$dateformat = 1;
+
+// Define default starting view (month, week or day)
+// Default is day
+$default_view = "month";
+
+// Define clipping behaviour for the cells in the month view.                           
+// Set to TRUE if you want the cells in the month view to scroll if there are too
+// many bookings to display; set to FALSE if you want the table cell to expand to
+// accommodate the bookings.   (NOTE: (1) scrolling doesn't work in IE6 and so the table
+// cell will always expand in IE6.  (2) In IE8 Beta 2 scrolling doesn't work either and
+// the cell content is clipped when $month_cell_scrolling is set to TRUE.)
+$month_cell_scrolling = FALSE;
+
+
 ?>
