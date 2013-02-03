@@ -251,7 +251,6 @@ $mail_settings['recipients'] = 'The Harbour <harbour@robash.me.uk>';
 $vocab_override['en']['namebooker'] = "Client name (kept private)";
 $vocab_override['en']['fulldescription'] = "Additional information (kept private)";
 $vocab_override['en']['description'] = "Additional information";
-$vocab_override['en']['unavailable'] = "Hidden";
 
 
 ?>
