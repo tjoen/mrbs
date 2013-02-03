@@ -248,7 +248,7 @@ for ($day_num = 1; $day_num<=$days_in_month; $day_num++)
       else
       {
         $d[$day_num]["status"][] = $row['status'] & ~STATUS_PRIVATE;  // Clear the private bit
-        $d[$day_num]["shortdescrip"][] = htmlspecialchars($row['name']);
+        $d[$day_num]["shortdescrip"][] = htmlspecialchars($row['create_by']) . ' (' . htmlspecialchars($row['name']) . ')';
       }
       
 

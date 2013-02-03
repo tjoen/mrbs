@@ -80,7 +80,7 @@ function map_add_booking ($row, &$column, $am7, $pm7, $format)
     $row['status'] |= STATUS_PRIVATE;   // Set the private bit
     if ($is_private_field['entry.name'])
     {
-      $row['name']= "[".get_vocab('unavailable')."]";
+      $row['name']= " ";
     }
     if ($is_private_field['entry.description'])
     {
@@ -442,11 +442,16 @@ function cell_html($cell, $query_strings)
       $descr      = htmlspecialchars($cell[0]["data"]);
       $long_descr = htmlspecialchars($cell[0]["long_descr"]);
       $slots      = $cell[0]["slots"];
+      $created    = $cell[0]["create_by"];      
     }
     else  // id not set
     {
       unset($id);
       $slots = 1;
+    }
+    if($descr !== " ")
+    {       
+      $print_descr = " (" . "$descr" . ")";
     }
 
     // $c is the colour of the cell that the browser sees. Zebra stripes normally,
@@ -522,7 +527,7 @@ function cell_html($cell, $query_strings)
                  "\">\n";
         $html .= "<a href=\"view_entry.php?id=$id&amp;". $query_strings['booking'] . "\" title=\"$long_descr\">";
         $html .= ($is_repeat) ? "<img class=\"repeat_symbol $c\" src=\"images/repeat.png\" alt=\"" . get_vocab("series") . "\" title=\"" . get_vocab("series") . "\" width=\"10\" height=\"10\">" : '';
-        $html .= "$descr</a>\n";
+        $html .= "$created$print_descr</a>\n";
         $html .= "</div>\n";
       }
       $html .= "</td>\n";

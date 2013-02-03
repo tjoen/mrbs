@@ -132,6 +132,8 @@ $auth["type"] = "db"; // How to validate the user/password. One of "none"
                           // "config" "db" "db_ext" "pop3" "imap" "ldap" "nis"
                           // "nw" "ext".
 
+$auth['deny_public_access'] = TRUE; // Prevent the public (ie un-logged in users) from being able to view bookings
+
 
 /******************
  * Display settings
@@ -170,6 +172,15 @@ $default_view = "month";
 // cell will always expand in IE6.  (2) In IE8 Beta 2 scrolling doesn't work either and
 // the cell content is clipped when $month_cell_scrolling is set to TRUE.)
 $month_cell_scrolling = FALSE;
+
+
+/************************
+ * Private field settings
+ ************************/
+
+$is_private_field['entry.name']        = TRUE;  // Client name
+$is_private_field['entry.description'] = TRUE;  // Additional information
+$is_private_field['entry.create_by']   = FALSE; // Therapist name
 
 
 /**********************************************
@@ -248,9 +259,12 @@ $mail_settings['recipients'] = 'The Harbour <harbour@robash.me.uk>';
  * Vocabulary
  **********************************************/
 
-$vocab_override['en']['namebooker'] = "Client name (kept private)";
-$vocab_override['en']['fulldescription'] = "Additional information (kept private)";
-$vocab_override['en']['description'] = "Additional information";
+$vocab_override['en']['namebooker'] = "Client name (kept private)"; // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['fulldescription'] = "Additional information (kept private)"; // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['description'] = "Additional information"; // Used to overide vocabulary on view_entry.php
+$vocab_override['en']['unavailable'] = "Confidential"; // Used to overide vocabulary in functions_table.inc
+$vocab_override['en']['private'] = "Confidential"; // Used to overide vocabulary on view_entry.php
+$vocab_override['en']['norights'] = "You do not have the necessary rights to view this page. If you are having problems logging in please contact <a href=mailto:info@the-harbour.co.uk>info@the-harbour.co.uk</a>.";
 
 
 ?>
