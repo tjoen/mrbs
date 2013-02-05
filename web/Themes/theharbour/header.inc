@@ -222,9 +222,9 @@
 	      if (function_exists('PrintLogonBox'))
 	      {
 	        PrintLogonBox(); 
-	        echo "<a href=\"help.php?$query_str\" class=\"help\">" . get_vocab("help") . "</a>\n";
 	      }
 	      ?>
+	  <a href="help.pdf" class="help">Help</a>
 	</div>
       
       
