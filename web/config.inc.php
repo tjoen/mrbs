@@ -173,6 +173,9 @@ $default_view = "month";
 // the cell content is clipped when $month_cell_scrolling is set to TRUE.)
 $month_cell_scrolling = FALSE;
 
+// Max slots = 13 hours (8am to 9pm) + 1 hour (default booking) * 6 (10 minute slots)
+$max_slots = "84";
+
 
 /************************
  * Private field settings
