@@ -11,9 +11,10 @@ margin: 3% 0 0 12.5%;
 }
 
 #mrbs{
+width: 100%;
 float: left;
-margin: 8.6% 0 0 -28.6%;
 font-size: 18px;
+text-align: center;
 }
 
 #logon_box{
@@ -23,6 +24,8 @@ margin-right: 2%;
 padding: 10px 10px 30px 10px;
 background-color: #80b4c6;
 border-radius: 0 0 10px 10px;
+border: 1px solid  #b9e4f7;
+opacity: 0.8;
 }
 .help{
 margin-top: 10px;

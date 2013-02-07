@@ -120,6 +120,21 @@
         ?>       
     </div><!-- company -->
     
+    
+    <div id="logon_box">
+	      <?php
+	      // For session protocols that define their own logon box...
+	      if (function_exists('PrintLogonBox'))
+	      {
+	        PrintLogonBox(); 
+	      }
+	      ?>
+	  <a href="help.pdf" class="help">Help</a>
+	  <a href="admin.php?$query_str">Rooms</a>
+	  <a href="report.php?$query_str">Report</a>
+	</div>
+    
+    
     <div id="mrbs">
       <a href="index.php"><?php echo get_vocab("mrbs") ?></a>
     </div>
@@ -214,19 +229,6 @@
 	        </form>        
 	      </td>
 	      -->
-	      
-	  
-    <div id="logon_box">
-	      <?php
-	      // For session protocols that define their own logon box...
-	      if (function_exists('PrintLogonBox'))
-	      {
-	        PrintLogonBox(); 
-	      }
-	      ?>
-	  <a href="help.pdf" class="help">Help</a>
-	</div>
-      
       
 	      <!--
 		  <?php
