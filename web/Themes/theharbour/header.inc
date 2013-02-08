@@ -90,6 +90,61 @@
 
   <div id="banner">
   
+    <div id="logon_box">
+	      <?php
+	      // For session protocols that define their own logon box...
+	      if (function_exists('PrintLogonBox'))
+	      {
+	        PrintLogonBox(); 
+	      }
+	      ?>
+	  <!--
+	  <a href="help.pdf" class="help">Help</a>
+	  <a href="admin.php?$query_str">Rooms</a>
+	  <a href="report.php?$query_str">Report</a>
+	  
+	  		<?php
+	        // Provide a link to the list of bookings awaiting approval
+	        // (if there are any enabled areas where we require bookings to be approved)
+	
+	        $approval_somewhere = some_area('approval_enabled', TRUE);
+	        if ($approval_somewhere && (authGetUserLevel($user) >= 1))
+	        {
+	          $sql_approval_enabled = some_area_predicate('approval_enabled');
+	          // Find out how many bookings are awaiting approval
+	          // (but only for areas where approval is required)
+	          $sql = "SELECT COUNT(*)
+	                    FROM $tbl_entry E, $tbl_room R, $tbl_area A
+	                   WHERE (status&" . STATUS_AWAITING_APPROVAL . " != 0)
+	                     AND E.room_id = R.id
+	                     AND R.area_id = A.id
+	                     AND R.disabled = 0
+	                     AND A.disabled = 0
+	                     AND $sql_approval_enabled";
+	          if (!$is_admin)
+	          {
+	            // Ordinary users can only see their own
+	            $sql .= " AND create_by='" . sql_escape($user) . "'";
+	          }
+	          $n_outstanding = sql_query1($sql);
+	          if ($n_outstanding < 0)
+	          {
+	            trigger_error(sql_error(), E_USER_WARNING);
+	            fatal_error(FALSE, get_vocab("fatal_db_error"));
+	          }
+	          echo "<div id=\"n_outstanding\"" .
+	               (($n_outstanding > 0) ? " class=\"outstanding\"" : '') .
+	               ">\n";
+	          echo "<a href=\"pending.php?day=$day&amp;month=$month&amp;year=$year&amp;area=$area" . 
+	               ((!empty($room)) ? "&amp;room=$room" : "") . 
+	               "\">$n_outstanding " . get_vocab("outstanding") . "</a>\n";
+	          echo "</div>\n";
+	        }
+	        ?>
+	-->
+	  
+	</div>
+	
     <div id="company">
         <?php
           echo "<div id=\"logo\">\n";
@@ -119,21 +174,6 @@
           }
         ?>       
     </div><!-- company -->
-    
-    
-    <div id="logon_box">
-	      <?php
-	      // For session protocols that define their own logon box...
-	      if (function_exists('PrintLogonBox'))
-	      {
-	        PrintLogonBox(); 
-	      }
-	      ?>
-	  <a href="help.pdf" class="help">Help</a>
-	  <a href="admin.php?$query_str">Rooms</a>
-	  <a href="report.php?$query_str">Report</a>
-	</div>
-    
     
     <div id="mrbs">
       <a href="index.php"><?php echo get_vocab("mrbs") ?></a>
@@ -256,7 +296,55 @@
 	      ?>
 	      -->
 
-
+  
+  <div id="navigation">
+  	<ul>
+  	  <li><a href="http://www.the-harbour.com">Home</a></li>
+  	  <li><a href="help.pdf">Help</a></li>
+	  <li><a href="admin.php?$query_str">Rooms</a></li>
+	  <li><a href="report.php?$query_str">Report</a></li>
+	  <li><?php
+	        // Provide a link to the list of bookings awaiting approval
+	        // (if there are any enabled areas where we require bookings to be approved)
+	
+	        $approval_somewhere = some_area('approval_enabled', TRUE);
+	        if ($approval_somewhere && (authGetUserLevel($user) >= 1))
+	        {
+	          $sql_approval_enabled = some_area_predicate('approval_enabled');
+	          // Find out how many bookings are awaiting approval
+	          // (but only for areas where approval is required)
+	          $sql = "SELECT COUNT(*)
+	                    FROM $tbl_entry E, $tbl_room R, $tbl_area A
+	                   WHERE (status&" . STATUS_AWAITING_APPROVAL . " != 0)
+	                     AND E.room_id = R.id
+	                     AND R.area_id = A.id
+	                     AND R.disabled = 0
+	                     AND A.disabled = 0
+	                     AND $sql_approval_enabled";
+	          if (!$is_admin)
+	          {
+	            // Ordinary users can only see their own
+	            $sql .= " AND create_by='" . sql_escape($user) . "'";
+	          }
+	          $n_outstanding = sql_query1($sql);
+	          if ($n_outstanding < 0)
+	          {
+	            trigger_error(sql_error(), E_USER_WARNING);
+	            fatal_error(FALSE, get_vocab("fatal_db_error"));
+	          }
+	          echo "<div id=\"n_outstanding\"" .
+	               (($n_outstanding > 0) ? " class=\"outstanding\"" : '') .
+	               ">\n";
+	          echo "<a href=\"pending.php?day=$day&amp;month=$month&amp;year=$year&amp;area=$area" . 
+	               ((!empty($room)) ? "&amp;room=$room" : "") . 
+	               "\">$n_outstanding " . get_vocab("outstanding") . "</a>\n";
+	          echo "</div>\n";
+	        }
+	        ?>
+	  </li>
+  	</ul>
+  </div>
+  
   </div> <!-- banner -->
 
 </div> <!-- screenonly -->

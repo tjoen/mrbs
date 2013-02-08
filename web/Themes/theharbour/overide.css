@@ -6,13 +6,11 @@ color: #FFFFFF;
 }
 
 #logo img {
-float: left;
 margin: 3% 0 0 12.5%;
 }
 
 #mrbs{
 width: 100%;
-float: left;
 font-size: 18px;
 text-align: center;
 }
@@ -21,16 +19,41 @@ text-align: center;
 float: right;
 text-align: center;
 margin-right: 2%;
-padding: 10px 10px 30px 10px;
+padding: 10px 10px 20px 10px;
 background-color: #80b4c6;
 border-radius: 0 0 10px 10px;
 border: 1px solid  #b9e4f7;
 opacity: 0.8;
 }
-.help{
-margin-top: 10px;
+
+#navigation{
+width:75%;
+height:40px;
+background-color: #00aeef;
+border-radius: 10px 10px 0 0;
+-moz-border-radius:10px 10px 0 0;
+-webkit-border-radius:10px 10px 0 0;    
+margin: 0 auto;
+margin-top: 22px;
+}
+#navigation ul{    
+list-style: none;
+text-align: center;
+}
+#navigation li{    
+display: inline;
+float: left;
+}
+#navigation li a{    
+display:block;    
+line-height:40px;    
+padding: 0 30px;    
+font-size: 13px; 
 }
 
+div#n_outstanding {
+margin-top: 0;
+}
 
 
 #contents, 
