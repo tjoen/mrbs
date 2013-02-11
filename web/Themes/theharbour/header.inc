@@ -270,6 +270,7 @@
 	      </td>
 	      -->
       
+      
 	      <!--
 		  <?php
 	      $query_str = "day=$day&amp;month=$month&amp;year=$year";
@@ -299,10 +300,21 @@
   
   <div id="navigation">
   	<ul>
-  	  <li><a href="http://www.the-harbour.com">Home</a></li>
+  	  <li><a href="http://www.the-harbour.co.uk">Home</a></li>
   	  <li><a href="help.pdf">Help</a></li>
-	  <li><a href="admin.php?$query_str">Rooms</a></li>
-	  <li><a href="report.php?$query_str">Report</a></li>
+  	  <?php
+	      $query_str = "day=$day&amp;month=$month&amp;year=$year";
+	      if (!empty($area))
+	      {
+	        $query_str .= "&amp;area=$area";
+	      }
+	      if (!empty($room))
+	      {
+	        $query_str .= "&amp;room=$room";
+	      }
+	      echo "<li><a href=\"admin.php?$query_str\">" . get_vocab("rooms") . "</a></li>";
+	      echo "<li><a href=\"report.php?$query_str\">" . get_vocab("report") . "</a></li>";
+	  ?>
 	  <li><?php
 	        // Provide a link to the list of bookings awaiting approval
 	        // (if there are any enabled areas where we require bookings to be approved)
