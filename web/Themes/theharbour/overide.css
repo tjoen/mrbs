@@ -34,19 +34,21 @@ background-color: #80b4c6;
 border-radius: 0 0 10px 10px;
 -webkit-border-radius: 0 0 10px 10px;
 -moz-border-radius: 0 0 10px 10px;
-border: 1px solid  #b9e4f7;
+border-left: 1px solid  #b9e4f7;
+border-right: 1px solid  #b9e4f7;
+border-bottom: 1px solid  #b9e4f7;
 opacity: 0.8;
 }
 
 #navigation{
-width:75%;
-height:40px;
+width: 960px;
+height: 40px;
 background-color: #00aeef;
 border-radius: 10px 10px 0 0;
 -moz-border-radius: 10px 10px 0 0;
 -webkit-border-radius: 10px 10px 0 0;    
 margin: 0 auto;
-margin-top: 22px;
+margin-top: 26px;
 }
 #navigation ul{    
 list-style: none;
