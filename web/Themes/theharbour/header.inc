@@ -41,7 +41,6 @@
 		    $search_str = "";
 		  }
 		  
-		  http_headers();
 		  echo DOCTYPE;
 		?>
 
