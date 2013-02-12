@@ -81,11 +81,11 @@ $color_types = array(
     'B' => "#99cccc",
     'C' => "#ffffcd",
     'D' => "#cde6e6",
-    'E' => "#6dd9c4",
+    'E' => "#FAA31B",
     'F' => "#82adad",
     'G' => "#ccffcc",
     'H' => "#d9d982",
-    'I' => "#99cc66",
+    'I' => "#88C6ED",
     'J' => "#e6ffe6"); 
 
 // colours used for pending.php and bookings awaiting approval

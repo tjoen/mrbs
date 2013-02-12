@@ -85,13 +85,6 @@ border-radius: 10px;
 border: 1px solid #CCC;
 }
 
-td.I{
-background-color: #88C6ED;
-}
-td.E{
-background-color: #FAA31B;
-}
-
 div.datatable_container {
 padding: 0 0 20px 0;
 height: 200px;
