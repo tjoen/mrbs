@@ -84,7 +84,7 @@ $mrbs_company_logo = "Themes/theharbour/harbour-logo.png";    // name of your lo
 //$mrbs_company_more_info = "You can put additional information here";  // e.g. "XYZ Department"
 
 // Uncomment this next line to have a link to your organisation in the header
-$mrbs_company_url = "http://www.the-harbour.co.uk/";
+$mrbs_company_url = "http://the-harbour.co.uk.gridhosted.co.uk/mrbs-master/web";
 
 // This is to fix URL problems when using a proxy in the environment.
 // If links inside MRBS appear broken, then specify here the URL of
@@ -93,7 +93,7 @@ $mrbs_company_url = "http://www.the-harbour.co.uk/";
 // It is also recommended that you set this if you intend to use email
 // notifications, to ensure that the correct URL is displayed in the
 // notification.
-$url_base = "http://webdev/mrbs/web";
+$url_base = "http://the-harbour.co.uk.gridhosted.co.uk/mrbs-master/web";
 
 
 /*******************
@@ -218,9 +218,9 @@ $mail_settings['book_admin_on_approval'] = FALSE;  // the booking administrator 
 // and before, where there was no explicit config setting, but mails were always sent
 // for new bookings if there was somebody to send them to)
 
-$mail_settings['on_new']    = TRUE;   // when an entry is created
-$mail_settings['on_change'] = TRUE;  // when an entry is changed
-$mail_settings['on_delete'] = TRUE;  // when an entry is deleted
+$mail_settings['on_new']    = FALSE;   // when an entry is created
+$mail_settings['on_change'] = FALSE;  // when an entry is changed
+$mail_settings['on_delete'] = FALSE;  // when an entry is deleted
 
 
 // WHAT TO EMAIL
@@ -256,6 +256,19 @@ $mail_settings['from'] = 'The Harbour <harbour@robash.me.uk>';
 // Set the recipient email. Default is 'admin_email@your.org'. You can define
 // more than one recipient like this "john@doe.com,scott@tiger.com"
 $mail_settings['recipients'] = 'The Harbour <harbour@robash.me.uk>';
+
+
+/*************
+ * Reports
+ *************/
+
+// CSV format
+// By default Excel expects a tab as the column separator, so if you are opening
+// CSV files with Excel you may want to change $csv_col_sep to be '\t'
+$csv_col_sep = "\t";   // Separator between columns/fields
+
+// Default report span in days:
+$default_report_days = 30;
 
 
 /**********************************************
