@@ -175,7 +175,7 @@
     </div><!-- company -->
     
     <div id="mrbs">
-      <a href="index.php"><?php echo get_vocab("mrbs") ?></a>
+      <a href="<?php print $mrbs_company_url; ?>"><?php echo get_vocab("mrbs") ?></a>
     </div>
     
     
@@ -299,7 +299,7 @@
   
   <div id="navigation">
   	<ul>
-  	  <li><a href="http://www.the-harbour.co.uk">Home</a></li>
+  	  <li><a href="<?php print $mrbs_company_url; ?>">Home</a></li>
   	  <li><a href="help.pdf">Help</a></li>
   	  <?php
 	      $query_str = "day=$day&amp;month=$month&amp;year=$year";
