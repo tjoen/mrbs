@@ -50,10 +50,7 @@ $hidden_days          = array(6,0);  // Hide Saturday (6) and Sunday (0) as the 
 $dateformat           = 1;           // Display short dates in non-US format
 $default_view         = "month";     // Set the default view to month
 $month_cell_scrolling = FALSE;       // Have cells expand to display all their bookings rather than present a scroll bar
-$max_slots            = "84";        // Maximum number of booking slots per day, based on the start of first and start of last slots, default duration and booking resolution, 
-                                     // all of which are defined in Rooms > Area > Edit
-                                     // 8am to 9pm = 13 hours, default duration = 1 hour, 10 minute booking resolution = 6 slots per hour
-                                     // 6(13+1)=84
+$max_slots            = "288";       // Maximum number of booking slots per day, if the site were to be configured with a 5 minute booking resolution
 
 
 /*****************************
