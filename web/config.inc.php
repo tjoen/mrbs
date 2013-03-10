@@ -1,8 +1,8 @@
 <?php
 
-/**************************************************************************
- * MRBS Configuration File
- **************************************************************************/
+/*************************************
+ * The Harbour MRBS Configuration File
+ *************************************/
 
 
 /**********
@@ -27,7 +27,6 @@ $theme = "theharbour";  // Our custom theme in the Theme folder
  * Site identification information
  *********************************/
 $mrbs_admin        = "The Harbour Administrator";
-$mrbs_admin_email  = "The Harbour <harbour@robash.me.uk>";
 $mrbs_company      = "The Harbour";                         // The name of our organisation
 $mrbs_company_logo = "Themes/$theme/logo.png";              // The logo displayed in the header
 $mrbs_company_url  = "http://www.the-harbour.co.uk/rooms";  // The URL used for the logo and home link
@@ -61,11 +60,20 @@ $is_private_field['entry.description'] = TRUE;   // Additional information
 $is_private_field['entry.create_by']   = FALSE;  // Therapist name
 
 
+/****************
+ * Email settings
+ ****************/
+$mail_settings['admin_backend'] = 'sendmail';            // Use PHP Sendmail to send emails
+$sendmail_settings['path']      = '/usr/sbin/sendmail';  // Path to Sendmail, as specified in the output from phpinfo();
+$sendmail_settings['args']      = '-t -i';               // Additional Sendmail parameters, as specified in the output from phpinfo();
+
+
 /*****************
  * Email addresses
  *****************/
+$mrbs_admin_email            = "The Harbour <harbour@robash.me.uk>";  // Administrator email address
 $mail_settings['from']       = "The Harbour <harbour@robash.me.uk>";  // From address shown in emails sent by MRBS
-$mail_settings['recipients'] = "The Harbour <harbour@robash.me.uk>";  // Admin email address
+$mail_settings['recipients'] = "The Harbour <harbour@robash.me.uk>";  // Recipient for emails sent when a booking is made
 
 
 /****************
@@ -91,17 +99,17 @@ $mail_settings['debug'] = TRUE;
 $mail_settings['disabled'] = TRUE;
 
 
-/*************
+/*********
  * Reports
- *************/
+ *********/
 $csv_col_sep         = "\t";  // Include the right separator between columns/fields so exported CSV files are handled correctly in Microsoft Excel
 $default_report_days = 30;    // Default number of days a report should cover
 
 
-/**********************************************
+/****************************************************************
  * Vocabulary
  * Use this section to overide vocabulary defined in lang/lang.en
- **********************************************/
+ ****************************************************************/
 $vocab_override['en']['namebooker']      = "Client name (kept private)";             // Used to overide vocabulary on edit_entry.php
 $vocab_override['en']['fulldescription'] = "Additional information (kept private)";  // Used to overide vocabulary on edit_entry.php
 $vocab_override['en']['description']     = "Additional information";                 // Used to overide vocabulary on view_entry.php
