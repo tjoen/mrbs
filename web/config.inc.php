@@ -112,8 +112,11 @@ $default_report_days = 30;    // Default number of days a report should cover
  ****************************************************************/
 $vocab_override['en']['namebooker']      = "Client name (kept private)";               // Used to overide vocabulary on edit_entry.php
 $vocab_override['en']['fulldescription'] = "Optional additional info (kept private)";  // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['rep_type_6']      = "Every nth week";                           // Used to overide vocabulary on edit_entry.php
 $vocab_override['en']['rep_end_date']    = "Repeat until";                             // Used to overide vocabulary on edit_entry.php
-$vocab_override['en']['rep_num_weeks']   = "Repeat every X weeks";                     // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['rep_for_weekly']  = "(for weekly or every nth week)";           // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['rep_num_weeks']   = "Repeat every nth week";                    // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['rep_for_nweekly'] = "";                                         // Used to overide vocabulary on edit_entry.php
 $vocab_override['en']['description']     = "Additional information";                   // Used to overide vocabulary on view_entry.php
 $vocab_override['en']['unavailable']     = "Confidential";                             // Used to overide vocabulary in functions_table.inc
 $vocab_override['en']['private']         = "Confidential";                             // Used to overide vocabulary on view_entry.php
