@@ -47,33 +47,33 @@
 <html>
   
   <head>
-	  <meta charset="<?php echo get_charset(); ?>">
-	  <title><?php echo get_vocab("mrbs") ?></title>
-		  <?php
-		  require_once "style.inc";
-		  require_once "js.inc";
-		  ?>
+	<meta charset="<?php echo get_charset(); ?>">
+	<title><?php echo get_vocab("mrbs") ?></title>
+      <?php
+		require_once "style.inc";
+		require_once "js.inc";
+	  ?>
 	  <!-- Theme customisation -->
 	  <link href="./Themes/theharbour/overide.css" rel="stylesheet" type="text/css">
   </head>
-
   
-		  <?php
-		  // Put the filename in as a class to aid styling.   
-		  // (Use a class rather than id to avoid specificity problems)
-		  echo "<body class=\"non_js ".htmlspecialchars($page)."\">\n";
-		   
-		    // Add a class of "js" so that we know if we're using JavaScript or not
-		    // and remove the non_js class (it's sometimes useful to know that we're
-		    // not running JavaScript)
-		  ?>
-    <script type="text/javascript">
-      //<![CDATA[
-      $('body').addClass('js').removeClass('non_js');
-      //]]>
-    </script> 
+  <?php
+  // Put the filename in as a class to aid styling.   
+  // (Use a class rather than id to avoid specificity problems)
+  echo "<body class=\"non_js ".htmlspecialchars($page)."\">\n";		   
+  // Add a class of "js" so that we know if we're using JavaScript or not
+  // and remove the non_js class (it's sometimes useful to know that we're
+  // not running JavaScript)
+  ?>
+  
+  <script type="text/javascript">
+  //<![CDATA[
+    $('body').addClass('js').removeClass('non_js');
+  //]]>
+  </script> 
 
 
+<!-- A wrap around the header -->
 <div class="screenonly">
 		<?php // show a warning if this is using a low version of php
 		  if (substr(phpversion(), 0, 1) == 3)
@@ -86,9 +86,10 @@
 		  }
 		?>
 
-
+  <!-- Defining the banner section -->
   <div id="banner">
-  
+  	
+  	<!-- Top right login box -->
     <div id="logon_box">
 	      <?php
 	      // For session protocols that define their own logon box...
@@ -97,11 +98,11 @@
 	        PrintLogonBox(); 
 	      }
 	      ?>
-	  <!--
-	  <a href="help.pdf" class="help">Help</a>
-	  <a href="admin.php?$query_str">Rooms</a>
-	  <a href="report.php?$query_str">Report</a>
-	  
+	      
+	      <!--
+		  <a href="help.pdf" class="help">Help</a>
+		  <a href="admin.php?$query_str">Rooms</a>
+		  <a href="report.php?$query_str">Report</a>	  
 	  		<?php
 	        // Provide a link to the list of bookings awaiting approval
 	        // (if there are any enabled areas where we require bookings to be approved)
@@ -140,10 +141,12 @@
 	          echo "</div>\n";
 	        }
 	        ?>
-	-->
-	  
+	      -->
+	      
+	<!-- Closing the login box -->
 	</div>
 	
+	<!-- Contains the logo -->
     <div id="company">
         <?php
           echo "<div id=\"logo\">\n";
@@ -172,13 +175,14 @@
             echo "<div id=\"more_info\">$mrbs_company_more_info</div>\n";
           }
         ?>       
-    </div><!-- company -->
+    </div>
+    <!-- Closing the logo banner -->
     
+    <!-- Contains mrbs link -->
     <div id="mrbs">
       <a href="<?php print $mrbs_company_url; ?>"><?php echo get_vocab("mrbs") ?></a>
     </div>
-    
-    
+      
 	      <!--
 		    <td>
 	        <form action="day.php" method="get" id="Form1">
@@ -242,8 +246,7 @@
 	        }
 	        ?>
 	      </td>
-	      -->
-	      
+	      -->      
 	      
 	      <!--
 		  <td>
@@ -267,8 +270,7 @@
 	          </div>
 	        </form>        
 	      </td>
-	      -->
-      
+	      -->     
       
 	      <!--
 		  <?php
@@ -295,8 +297,8 @@
 	      echo "</td>\n";
 	      ?>
 	      -->
-
   
+  <!-- Open Navigation -->
   <div id="navigation">
   	<ul>
   	  <li><a href="<?php print $mrbs_company_url; ?>">Home</a></li>
@@ -354,12 +356,16 @@
 	        ?>
 	  </li>
   	</ul>
+  <!-- Close Navigation -->
   </div>
   
-  </div> <!-- banner -->
+  <!-- Closing the Banner -->
+  </div>
 
-</div> <!-- screenonly -->
+<!-- Closing the banner wrap -->
+</div> 
 
+<!-- Opening the rest of the contents -->
 <div id="contents">
 
 		<?php

@@ -1,30 +1,31 @@
+/* -----------------------------------Body Styling */
 body {
-    background-color: #00AEEF;
-    color: #FFFFFF; // #0B263B;
-    font-family: normal verdana,lucida grande,sans-serif;
-    font-size: small;
-    margin: 0;
-    padding: 0;
+background-color: #00AEEF;
+color: #FFFFFF; // #0B263B;
+font-family: normal verdana,lucida grande,sans-serif;
+font-size: small;
+margin: 0;
+padding: 0;
 }
 
-
+/* -----------------------------------Banner Styling */
 #banner {
 height: 220px;
 width: 100%;    
 background-color: #006991;
 color: #FFFFFF;
 }
-
+/* Logo Styling */
 #logo img {
 margin: 3% 0 0 12.5%;
 }
-
+/* mrbs text link Styling */
 #mrbs{
 width: 100%;
 font-size: 18px;
 text-align: center;
 }
-
+/* Top right logon box Styling */
 #logon_box{
 float: right;
 text-align: center;
@@ -40,6 +41,7 @@ border-bottom: 1px solid  #b9e4f7;
 opacity: 0.8;
 }
 
+/* -----------------------------------Navigation Styling */
 #navigation{
 width: 960px;
 height: 40px;
@@ -64,20 +66,21 @@ line-height:40px;
 padding: 0 60px;    
 font-size: 13px; 
 }
-
+/* Pending bookings Styling */
 div#n_outstanding {
 margin-top: 0;
 }
 
+/* -----------------------------------Main Content, Footer Styling */
 #contents, #trailer {
 margin: 0 auto 50px;
 width: 960px;
 }
-
+/* Rooms and calendar column Styling */
 #dwm_header{
 padding-bottom: 20px;
 }
-
+/* Calendar Styling */
 #cals{
 background-color: #EEE;
 padding: 5px;
@@ -86,17 +89,19 @@ border-radius: 10px;
 -webkit-border-radius: 10px;
 border: 1px solid #CCC;
 }
-
-div.datatable_container {
+/* Datatable Styling */
+div.datatable_container{
 padding: 0 0 20px 0;
 height: 200px;
 color: black;
 }
 
+/* -----------------------------------Text header Styling */
 legend{
 color: #FFF;
 }
 
+/* -----------------------------------Footer Styling */
 #trailer {
 width: 82%;
 bottom: 0;
@@ -107,4 +112,3 @@ border-radius: 0 10px 10px 0;
 -webkit-border-radius: 0 10px 10px 0; 
 border-right: 1px solid black;
 }
-
