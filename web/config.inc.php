@@ -26,7 +26,7 @@ $theme = "theharbour";  // Our custom theme in the Theme folder
 /*********************************
  * Site identification information
  *********************************/
-$mrbs_admin        = "The Harbour Administrator";
+$mrbs_admin        = "The Harbour Room Bookings";
 $mrbs_company      = "The Harbour";                         // The name of our organisation
 $mrbs_company_logo = "Themes/$theme/logo.png";              // The logo displayed in the header
 $mrbs_company_url  = "http://www.the-harbour.co.uk/rooms";  // The URL used for the logo and home link
@@ -71,9 +71,9 @@ $sendmail_settings['args']      = '-t -i';               // Additional Sendmail 
 /*****************
  * Email addresses
  *****************/
-$mrbs_admin_email            = "The Harbour <harbour@robash.me.uk>";  // Administrator email address
-$mail_settings['from']       = "The Harbour <harbour@robash.me.uk>";  // From address shown in emails sent by MRBS
-$mail_settings['recipients'] = "The Harbour <harbour@robash.me.uk>";  // Recipient for emails sent when a booking is made
+$mrbs_admin_email            = "The Harbour Room Bookings <roombookings@the-harbour.co.uk>";  // Administrator email address
+$mail_settings['from']       = "The Harbour Room Bookings <roombookings@the-harbour.co.uk>";  // From address shown in emails sent by MRBS
+$mail_settings['recipients'] = "The Harbour Room Bookings <roombookings@the-harbour.co.uk>";  // Recipient for emails sent when a booking is made
 
 
 /****************
@@ -110,11 +110,13 @@ $default_report_days = 30;    // Default number of days a report should cover
  * Vocabulary
  * Use this section to overide vocabulary defined in lang/lang.en
  ****************************************************************/
-$vocab_override['en']['namebooker']      = "Client name (kept private)";             // Used to overide vocabulary on edit_entry.php
-$vocab_override['en']['fulldescription'] = "Additional information (kept private)";  // Used to overide vocabulary on edit_entry.php
-$vocab_override['en']['description']     = "Additional information";                 // Used to overide vocabulary on view_entry.php
-$vocab_override['en']['unavailable']     = "Confidential";                           // Used to overide vocabulary in functions_table.inc
-$vocab_override['en']['private']         = "Confidential";                           // Used to overide vocabulary on view_entry.php
-$vocab_override['en']['norights']        = "You do not have the necessary rights to view this page. If you are having problems logging in please contact <a href=mailto:info@the-harbour.co.uk>info@the-harbour.co.uk</a>.";
+$vocab_override['en']['namebooker']      = "Client name (kept private)";               // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['fulldescription'] = "Optional additional info (kept private)";  // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['rep_end_date']    = "Repeat until";                             // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['rep_num_weeks']   = "Repeat every X weeks";                     // Used to overide vocabulary on edit_entry.php
+$vocab_override['en']['description']     = "Additional information";                   // Used to overide vocabulary on view_entry.php
+$vocab_override['en']['unavailable']     = "Confidential";                             // Used to overide vocabulary in functions_table.inc
+$vocab_override['en']['private']         = "Confidential";                             // Used to overide vocabulary on view_entry.php
+$vocab_override['en']['norights']        = "You do not have the necessary rights to view this page. If you are having problems logging in please contact <a href=mailto:roombookings@the-harbour.co.uk>roombookings@the-harbour.co.uk</a>.";
 
 ?>
