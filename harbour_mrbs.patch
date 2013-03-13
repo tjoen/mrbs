@@ -1,0 +1,68 @@
+diff -rupN old/functions_table.inc new/functions_table.inc
+--- old/functions_table.inc	2013-03-13 02:19:53.000000000 +0000
++++ new/functions_table.inc	2013-02-18 15:51:18.000000000 +0000
+@@ -80,7 +80,7 @@ function map_add_booking ($row, &$column
+     $row['status'] |= STATUS_PRIVATE;   // Set the private bit
+     if ($is_private_field['entry.name'])
+     {
+-      $row['name']= "[".get_vocab('unavailable')."]";
++      $row['name']= " ";
+     }
+     if ($is_private_field['entry.description'])
+     {
+@@ -442,12 +442,17 @@ function cell_html($cell, $query_strings
+       $descr      = htmlspecialchars($cell[0]["data"]);
+       $long_descr = htmlspecialchars($cell[0]["long_descr"]);
+       $slots      = $cell[0]["slots"];
++      $created    = $cell[0]["create_by"];      
+     }
+     else  // id not set
+     {
+       unset($id);
+       $slots = 1;
+     }
++    if($descr !== " ")
++    {       
++      $print_descr = " (" . "$descr" . ")";
++    }
+ 
+     // $c is the colour of the cell that the browser sees. Zebra stripes normally,
+     // row_highlight if we're highlighting that line and the appropriate colour if
+@@ -522,7 +527,7 @@ function cell_html($cell, $query_strings
+                  "\">\n";
+         $html .= "<a href=\"view_entry.php?id=$id&amp;". $query_strings['booking'] . "\" title=\"$long_descr\">";
+         $html .= ($is_repeat) ? "<img class=\"repeat_symbol $c\" src=\"images/repeat.png\" alt=\"" . get_vocab("series") . "\" title=\"" . get_vocab("series") . "\" width=\"10\" height=\"10\">" : '';
+-        $html .= "$descr</a>\n";
++        $html .= "$created$print_descr</a>\n";
+         $html .= "</div>\n";
+       }
+       $html .= "</td>\n";
+diff -rupN old/month.php new/month.php
+--- old/month.php	2013-03-13 02:19:53.000000000 +0000
++++ new/month.php	2013-02-17 14:00:50.000000000 +0000
+@@ -248,7 +248,7 @@ for ($day_num = 1; $day_num<=$days_in_mo
+       else
+       {
+         $d[$day_num]["status"][] = $row['status'] & ~STATUS_PRIVATE;  // Clear the private bit
+-        $d[$day_num]["shortdescrip"][] = htmlspecialchars($row['name']);
++        $d[$day_num]["shortdescrip"][] = htmlspecialchars($row['create_by']) . ' (' . htmlspecialchars($row['name']) . ')';
+       }
+       
+ 
+diff -rupN old/mrbs_auth.inc new/mrbs_auth.inc
+--- old/mrbs_auth.inc	2013-03-13 02:19:53.000000000 +0000
++++ new/mrbs_auth.inc	2013-03-13 16:07:47.000000000 +0000
+@@ -28,10 +28,10 @@ $page_level['week.php']                 
+ // made within the page to prevent ordinary users gaining access to admin features.
+ $page_level['admin.php']                 = 1;  // Ordinary users can view room details 
+ $page_level['approve_entry_handler.php'] = 1;  // Ordinary users are allowed to remind admins
+-$page_level['del_entry.php']             = ($auth['only_admin_can_book']) ? 2 : 1;
++$page_level['del_entry.php']             = ($auth['only_admin_can_book']) ? 3 : 2;
+ $page_level['edit_area_room.php']        = 1;  // Ordinary users can view room details
+-$page_level['edit_entry.php']            = ($auth['only_admin_can_book']) ? 2 : 1;
+-$page_level['edit_entry_handler.php']    = ($auth['only_admin_can_book']) ? 2 : 1;
++$page_level['edit_entry.php']            = ($auth['only_admin_can_book']) ? 3 : 1;
++$page_level['edit_entry_handler.php']    = ($auth['only_admin_can_book']) ? 3 : 1;
+ $page_level['edit_users.php']            = 1;  // Ordinary users can edit their own details
+ $page_level['pending.php']               = 1;  // Ordinary users can view their own entries
+ 
