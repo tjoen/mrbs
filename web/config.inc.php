@@ -36,9 +36,12 @@ $url_base          = "http://www.the-harbour.co.uk/rooms";
 /*************************
  * Authentication settings
  *************************/
-
 $auth['deny_public_access'] = TRUE;  // Prevent the public, i.e. users who are not logged in, from being able to access the site and view bookings
 $auth["type"]               = "db";  // Store authentication information in the database
+$max_level                  = 3;     // Raise the max user level so we can have a distinct level for external therapists
+$min_user_viewing_level     = 3;     // Require level 3 (admin) to view the user list
+$min_user_editing_level     = 3;     // Require level 3 (admin) to edit the user list
+
 
 
 /******************
@@ -120,6 +123,9 @@ $vocab_override['en']['rep_for_nweekly'] = "";                                  
 $vocab_override['en']['description']     = "Additional information";                   // Used to overide vocabulary on view_entry.php
 $vocab_override['en']['unavailable']     = "Confidential";                             // Used to overide vocabulary in functions_table.inc
 $vocab_override['en']['private']         = "Confidential";                             // Used to overide vocabulary on view_entry.php
+$vocab_override['en']["level_1"]         = "external";                                 // Used to overide vocabulary for user levels
+$vocab_override['en']["level_2"]         = "internal";                                 // Used to overide vocabulary for user levels
+$vocab_override['en']["level_3"]         = "admin";                                    // Used to overide vocabulary for user levels
 $vocab_override['en']['norights']        = "You do not have the necessary rights to view this page. If you are having problems logging in please contact <a href=mailto:roombookings@the-harbour.co.uk>roombookings@the-harbour.co.uk</a>.";
 
 ?>
