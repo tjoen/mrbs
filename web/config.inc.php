@@ -36,7 +36,7 @@ $url_base          = "http://www.the-harbour.co.uk/rooms";
 /*************************
  * Authentication settings
  *************************/
-$auth['deny_public_access'] = TRUE;  // Prevent the public, i.e. users who are not logged in, from being able to access the site and view bookings
+$auth['deny_public_access'] = FALSE;  // Prevent the public, i.e. users who are not logged in, from being able to access the site and view bookings
 $auth["type"]               = "db";  // Store authentication information in the database
 $max_level                  = 3;     // Raise the max user level so we can have a distinct level for external therapists
 $min_user_viewing_level     = 3;     // Require level 3 (admin) to view the user list
