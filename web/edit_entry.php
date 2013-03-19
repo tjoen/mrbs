@@ -1398,7 +1398,12 @@ foreach ($edit_entry_field_order as $key)
     
     ?>
     <input type="hidden" name="returl" value="<?php echo htmlspecialchars($returl) ?>">
-    <input type="hidden" name="create_by" value="<?php echo htmlspecialchars($create_by)?>">
+  <fieldset id="rep_info">
+    <div>
+      <label>Book as user</label>
+      <input type="text" name="create_by" value="<?php echo htmlspecialchars($create_by)?>">
+    </div>
+  </fieldset>
     <input type="hidden" name="rep_id" value="<?php echo $rep_id?>">
     <input type="hidden" name="edit_type" value="<?php echo $edit_type?>">
     <?php
