@@ -87,10 +87,10 @@ $mail_settings['area_admin_on_bookings'] = FALSE;  // Email area administrators 
 $mail_settings['room_admin_on_bookings'] = FALSE;  // Email room administrators on new booking, disabled as we have a single administrator for all rooms
 $mail_settings['booker']                 = TRUE;   // Email the person making the booking
 $mail_settings['book_admin_on_approval'] = FALSE;  // Email a separate administrator if approval is required, disabled as all bookings require approval
-$mail_settings['on_new']                 = FALSE;  // Email when a booking is created
-$mail_settings['on_change']              = FALSE;  // Email when a booking is changed
-$mail_settings['on_delete']              = FALSE;  // Email when a booking is deleted
-$mail_settings['details']                = FALSE;  // Include a link to the booking in emails, not all the booking details
+$mail_settings['on_new']                 = TRUE;   // Email when a booking is created
+$mail_settings['on_change']              = TRUE;   // Email when a booking is changed
+$mail_settings['on_delete']              = TRUE;   // Email when a booking is deleted
+$mail_settings['details']                = TRUE;   // Include the details of the booking in emails
 $mail_settings['html']                   = FALSE;  // Send emails in plain text
 $mail_settings['icalendar']              = FALSE;  // Do not include an attachment with iCalendar details
 
@@ -98,7 +98,7 @@ $mail_settings['icalendar']              = FALSE;  // Do not include an attachme
 /****************************
  * Email development settings
  ****************************/
-$mail_settings['debug'] = TRUE;
+$mail_settings['debug'] = FALSE;
 $mail_settings['disabled'] = TRUE;
 
 
