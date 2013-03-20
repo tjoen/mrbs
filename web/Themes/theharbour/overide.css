@@ -92,7 +92,6 @@ border: 1px solid #CCC;
 /* Datatable Styling */
 div.datatable_container{
 padding: 0 0 20px 0;
-height: 200px;
 color: black;
 }
 /* Hide the colour key */
@@ -116,4 +115,12 @@ border-radius: 0 10px 10px 0;
 -moz-border-radius: 0 10px 10px 0;
 -webkit-border-radius: 0 10px 10px 0; 
 border-right: 1px solid black;
+}
+#trailer a {
+color: #FFF;
+}
+#trailer span.hidden {
+background-color: transparent;
+color: #FFF;
+font-weight: normal;
 }
