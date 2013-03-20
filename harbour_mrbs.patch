@@ -1,7 +1,7 @@
-diff -rupN old/edit_entry.php new/edit_entry.php
+diff -ruPN old/edit_entry.php new/edit_entry.php
 --- old/edit_entry.php	2013-03-10 10:19:53.000000000 +0000
 +++ new/edit_entry.php	2013-03-19 19:56:51.000000000 +0000
-@@ -1398,7 +1398,12 @@ foreach ($edit_entry_field_order as $key
+@@ -1398,7 +1398,12 @@
      
      ?>
      <input type="hidden" name="returl" value="<?php echo htmlspecialchars($returl) ?>">
@@ -15,10 +15,10 @@ diff -rupN old/edit_entry.php new/edit_entry.php
      <input type="hidden" name="rep_id" value="<?php echo $rep_id?>">
      <input type="hidden" name="edit_type" value="<?php echo $edit_type?>">
      <?php
-diff -rupN old/functions_table.inc new/functions_table.inc
+diff -ruPN old/functions_table.inc new/functions_table.inc
 --- old/functions_table.inc	2013-03-13 02:19:53.000000000 +0000
 +++ new/functions_table.inc	2013-02-18 15:51:18.000000000 +0000
-@@ -80,7 +80,7 @@ function map_add_booking ($row, &$column
+@@ -80,7 +80,7 @@
      $row['status'] |= STATUS_PRIVATE;   // Set the private bit
      if ($is_private_field['entry.name'])
      {
@@ -27,7 +27,7 @@ diff -rupN old/functions_table.inc new/functions_table.inc
      }
      if ($is_private_field['entry.description'])
      {
-@@ -442,12 +442,17 @@ function cell_html($cell, $query_strings
+@@ -442,12 +442,17 @@
        $descr      = htmlspecialchars($cell[0]["data"]);
        $long_descr = htmlspecialchars($cell[0]["long_descr"]);
        $slots      = $cell[0]["slots"];
@@ -45,7 +45,7 @@ diff -rupN old/functions_table.inc new/functions_table.inc
  
      // $c is the colour of the cell that the browser sees. Zebra stripes normally,
      // row_highlight if we're highlighting that line and the appropriate colour if
-@@ -522,7 +527,7 @@ function cell_html($cell, $query_strings
+@@ -522,7 +527,7 @@
                   "\">\n";
          $html .= "<a href=\"view_entry.php?id=$id&amp;". $query_strings['booking'] . "\" title=\"$long_descr\">";
          $html .= ($is_repeat) ? "<img class=\"repeat_symbol $c\" src=\"images/repeat.png\" alt=\"" . get_vocab("series") . "\" title=\"" . get_vocab("series") . "\" width=\"10\" height=\"10\">" : '';
@@ -54,10 +54,10 @@ diff -rupN old/functions_table.inc new/functions_table.inc
          $html .= "</div>\n";
        }
        $html .= "</td>\n";
-diff -rupN old/month.php new/month.php
+diff -ruPN old/month.php new/month.php
 --- old/month.php	2013-03-13 02:19:53.000000000 +0000
 +++ new/month.php	2013-02-17 14:00:50.000000000 +0000
-@@ -248,7 +248,7 @@ for ($day_num = 1; $day_num<=$days_in_mo
+@@ -248,7 +248,7 @@
        else
        {
          $d[$day_num]["status"][] = $row['status'] & ~STATUS_PRIVATE;  // Clear the private bit
@@ -66,10 +66,10 @@ diff -rupN old/month.php new/month.php
        }
        
  
-diff -rupN old/mrbs_auth.inc new/mrbs_auth.inc
+diff -ruPN old/mrbs_auth.inc new/mrbs_auth.inc
 --- old/mrbs_auth.inc	2013-03-13 02:19:53.000000000 +0000
 +++ new/mrbs_auth.inc	2013-03-19 19:56:51.000000000 +0000
-@@ -14,13 +14,13 @@ if (isset($auth['session']))
+@@ -14,13 +14,13 @@
  // These pages are open to the public by default as they only contain
  // read features.   However if $auth['deny_public_access'] is TRUE then
  // access to the public is denied
@@ -89,7 +89,7 @@ diff -rupN old/mrbs_auth.inc new/mrbs_auth.inc
  
  // These pages are set to have a minimum access level of 1 as ordinary users
  // should be able to access them because they will have read access and in some
-@@ -28,10 +28,10 @@ $page_level['week.php']                 
+@@ -28,10 +28,10 @@
  // made within the page to prevent ordinary users gaining access to admin features.
  $page_level['admin.php']                 = 1;  // Ordinary users can view room details 
  $page_level['approve_entry_handler.php'] = 1;  // Ordinary users are allowed to remind admins
@@ -103,7 +103,7 @@ diff -rupN old/mrbs_auth.inc new/mrbs_auth.inc
  $page_level['edit_users.php']            = 1;  // Ordinary users can edit their own details
  $page_level['pending.php']               = 1;  // Ordinary users can view their own entries
  
-@@ -219,6 +219,6 @@ function auth_can_edit_user($user, $targ
+@@ -219,6 +219,6 @@
  //           the room; otherwise FALSE
  function auth_book_admin($user, $room)
  {
@@ -111,3 +111,17 @@ diff -rupN old/mrbs_auth.inc new/mrbs_auth.inc
 +  return (authGetUserLevel($user) >= 3);
  }
  ?>
+diff -ruPN old/systemdefaults.inc.php new/systemdefaults.inc.php
+--- old/systemdefaults.inc.php	2013-03-11 02:49:52.000000000 +0000
++++ new/systemdefaults.inc.php	2013-03-20 15:59:27.000000000 +0000
+@@ -1035,8 +1035,8 @@
+ // have chosen in the config settings. (The default is default.inc, unsurprisingly!)
+ //
+ 
+-$booking_types[] = "E";
+-$booking_types[] = "I";
++// $booking_types[] = "E";
++// $booking_types[] = "I";
+ 
+ // Default type for new bookings
+ $default_type = "I";
