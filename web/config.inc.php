@@ -54,6 +54,7 @@ $default_view         = "month";     // Set the default view to month
 $month_cell_scrolling = FALSE;       // Have cells expand to display all their bookings rather than present a scroll bar
 $max_slots            = "288";       // Maximum number of booking slots per day, if the site were to be configured with a 5 minute booking resolution
 
+require "booking_types.inc.php";
 
 /*****************************
  * Confidential field settings
