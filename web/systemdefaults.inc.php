@@ -1035,8 +1035,8 @@ $csv_bom = TRUE;
 // have chosen in the config settings. (The default is default.inc, unsurprisingly!)
 //
 
-$booking_types[] = "E";
-$booking_types[] = "I";
+// $booking_types[] = "E";
+// $booking_types[] = "I";
 
 // Default type for new bookings
 $default_type = "I";
