@@ -16,10 +16,10 @@ $default_type = "Z";
 /****************************************************** 
  * Specify the names that will appear against each type 
  ******************************************************/
-$vocab_override["en"]["type.A"] = "Therapist 1";
-$vocab_override["en"]["type.B"] = "Therapist 2";
-$vocab_override["en"]["type.C"] = "Therapist 3";
-$vocab_override["en"]["type.D"] = "Therapist 4";
+$vocab_override["en"]["type.A"] = "Mike";
+$vocab_override["en"]["type.B"] = "Liz";
+$vocab_override["en"]["type.C"] = "Paul";
+$vocab_override["en"]["type.D"] = "Ally";
 $vocab_override["en"]["type.E"] = "Therapist 5";
 $vocab_override["en"]["type.F"] = "Therapist 6";
 $vocab_override["en"]["type.G"] = "Therapist 7";
@@ -30,10 +30,10 @@ $vocab_override["en"]["type.K"] = "Therapist 11";
 $vocab_override["en"]["type.L"] = "Therapist 12";
 $vocab_override["en"]["type.M"] = "Therapist 13";
 $vocab_override["en"]["type.N"] = "Therapist 14";
-$vocab_override["en"]["type.O"] = "Therapist 15";
-$vocab_override["en"]["type.P"] = "Therapist 16";
+$vocab_override["en"]["type.U"] = "*Placement*";
+$vocab_override["en"]["type.V"] = "*Sessional*";
 $vocab_override["en"]["type.X"] = "*External*";
-$vocab_override["en"]["type.Y"] = "*Placement*";
+$vocab_override["en"]["type.Y"] = "*Groups*";
 
 /*********************************************************
  * Specify the types that appear in the list and the order
@@ -45,8 +45,8 @@ $booking_types[] = "A";
 $booking_types[] = "B";
 $booking_types[] = "C";
 $booking_types[] = "D";
-$booking_types[] = "E";
-$booking_types[] = "F";
+// $booking_types[] = "E";
+// $booking_types[] = "F";
 // $booking_types[] = "G";
 // $booking_types[] = "H";
 // $booking_types[] = "I";
@@ -55,8 +55,8 @@ $booking_types[] = "F";
 // $booking_types[] = "L";
 // $booking_types[] = "M";
 // $booking_types[] = "N";
-// $booking_types[] = "O";
-// $booking_types[] = "P";
+$booking_types[] = "U";
+$booking_types[] = "V";
 $booking_types[] = "Y";
 $booking_types[] = "X";
 

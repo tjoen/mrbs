@@ -78,24 +78,24 @@ $multiple_control_color         = "#ffff22";        // background colour for the
 // These are the colours used for distinguishing between the dfferent types of bookings in the main
 // displays in the day, week and month views
 $color_types = array(
-    'A' => "#ffff99",
-    'B' => "#99cccc",
-    'C' => "#ffffcd",
-    'D' => "#cde6e6",
-    'E' => "#e6ffe6",
-    'F' => "#82adad",
-    'G' => "#ccffcc",
-    'H' => "#d9d982",
-    'I' => "#0ba",
+    'A' => "#eeee22",
+    'B' => "#bbe535",
+    'C' => "#71cdae",
+    'D' => "#66ccdd",
+    'E' => "#eeee22",
+    'F' => "#bbe535",
+    'G' => "#77ddbb",
+    'H' => "#66ccdd",
+    'I' => "#fe8686",
     'J' => "#dae0e4",
     'K' => "#17a079",
     'L' => "#f04049",
     'M' => "#80c357",
     'N' => "#f99e62",
-    'O' => "#dd68dd",
-    'P' => "#f4f470",
-    'X' => "#88C6ED",
-    'Y' => "#FAA31B",
+    'U' => "#ffbb22",
+    'V' => "#fe8686",
+    'X' => "#b5c5c5",
+    'Y' => "#f56545",
     'Z' => "transparent"
     );
 
