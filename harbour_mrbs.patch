@@ -1,3 +1,31 @@
+Binary files old/css/.DS_Store and new/css/.DS_Store differ
+diff -rupN old/css/mrbs-print.css.php new/css/mrbs-print.css.php
+--- old/css/mrbs-print.css.php	2013-03-09 10:49:53.000000000 +0000
++++ new/css/mrbs-print.css.php	2013-03-26 16:23:14.000000000 +0000
+@@ -48,6 +48,7 @@ table#colour_key {margin-top: 1em}
+ foreach ($color_types as $type => $col)
+ {
+   echo "td.$type, .$type .celldiv {border: 2px solid $col}\n";         // used in the day and week views
++  echo ".month div.$type {float: left; max-height: 1.3em; height: 1.3em; min-height: 1.3em; overflow: hidden; background-color: $col}\n";   // used in the month view
+ }
+ 
+ // hide DataTable buttons in print
+@@ -56,3 +57,14 @@ foreach ($color_types as $type => $col)
+ .ColVis_Button, .dataTables_filter, .dataTables_length, .dataTables_paginate {display: none; }
+ 
+ .ui-resizable-handle {display: none}
++
++
++a:link {
++    color: #000000;
++    text-decoration: none;}
++.repeat_symbol {
++    display: none;
++}
++table#colour_key {
++display: none;
++}
+\ No newline at end of file
 diff -rupN old/edit_entry.php new/edit_entry.php
 --- old/edit_entry.php	2013-03-10 10:19:53.000000000 +0000
 +++ new/edit_entry.php	2013-03-19 19:56:51.000000000 +0000

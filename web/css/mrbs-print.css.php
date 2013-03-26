@@ -48,6 +48,7 @@ table#colour_key {margin-top: 1em}
 foreach ($color_types as $type => $col)
 {
   echo "td.$type, .$type .celldiv {border: 2px solid $col}\n";         // used in the day and week views
+  echo ".month div.$type {float: left; max-height: 1.3em; height: 1.3em; min-height: 1.3em; overflow: hidden; background-color: $col}\n";   // used in the month view
 }
 
 // hide DataTable buttons in print
@@ -56,3 +57,14 @@ foreach ($color_types as $type => $col)
 .ColVis_Button, .dataTables_filter, .dataTables_length, .dataTables_paginate {display: none; }
 
 .ui-resizable-handle {display: none}
+
+
+a:link {
+    color: #000000;
+    text-decoration: none;}
+.repeat_symbol {
+    display: none;
+}
+table#colour_key {
+display: none;
+}

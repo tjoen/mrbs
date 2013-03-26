@@ -51,8 +51,8 @@ $vocab_override["en"]["type.M"] = "";
 $vocab_override["en"]["type.N"] = "";
 $vocab_override["en"]["type.V"] = "*Placement*";
 $vocab_override["en"]["type.W"] = "*Sessional*";
-$vocab_override["en"]["type.X"] = "*External*";
-$vocab_override["en"]["type.Y"] = "*Groups*";
+$vocab_override["en"]["type.X"] = "*Groups*";
+$vocab_override["en"]["type.Y"] = "*External*";
 
 /******************************************************************
  * The actual colour codes are stored in a separate file - towards
